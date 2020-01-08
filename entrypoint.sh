@@ -7,6 +7,8 @@ PASSWORD=$2
 REPOSITORY=$3
 REGISTRY=$4
 TAG=$5
+ARG1=$6
+ARG2=$7
 
 if [ -z $USERNAME ]; then
   echo 'Required username parameter'
@@ -34,7 +36,7 @@ if [ -n "$REGISTRY" ]; then
   IMAGE=$REGISTRY/$IMAGE
 fi
 
-docker build -t $IMAGE .
+docker build -t $IMAGE . --build-arg awsAccessKey=$ARG1 --build-arg awsSecretKey=$ARG2
 docker login --username "$USERNAME" --password "$PASSWORD" $REGISTRY
 docker push $IMAGE
 
