@@ -20,6 +20,12 @@ inputs:
   tag:
     description: 'Image tag'
     required: false
+  arg1:
+    description: 'First argument'
+    required: false
+  arg2:
+    description: 'Second argument'
+    required: false
 outputs:
   image:
     description: 'Tagged docker image'
@@ -32,3 +38,5 @@ runs:
     - ${{ inputs.repository }}
     - ${{ inputs.registry }}
     - ${{ inputs.tag }}
+    - ${{ inputs.arg1 }}
+    - ${{ inputs.arg2 }}
