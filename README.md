@@ -1,3 +1,7 @@
+# Changes from original
+I wanted to add support for passing arguments to the build step
+
+
 # Publish docker action
 
 This action publish docker image to your registry
